@@ -43,8 +43,17 @@ const App = () => {
   useEffect(() => {
     try {
       // Access global variables for Firebase configuration and auth token
-      const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-      const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAmiDPsp0q4OqJPyZsoTA5WKWX9ugP8ic4",
+  authDomain: "mymoneymanagerapp-36834.firebaseapp.com",
+  projectId: "mymoneymanagerapp-36834",
+  storageBucket: "mymoneymanagerapp-36834.firebasestorage.app",
+  messagingSenderId: "7094438883",
+  appId: "1:7094438883:web:8e245db07de9a8893b2ed6",
+  measurementId: "G-8ZBE6E89WW"
+};
+      const appId = firebaseConfig.appId;
       const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
 
       // Initialize Firebase app
